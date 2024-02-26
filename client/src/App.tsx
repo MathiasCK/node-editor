@@ -29,34 +29,22 @@ import { ThemeProvider } from 'styled-components';
 import { Sidebar, Settings, SelectConnection } from './components/ui';
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Pages/Home";
-import ProtectedRoutes from "./components/Session/ProtectedRoute";
+import ProtectedRoute from "./components/Session/ProtectedRoute";
+import LoginForm from './components/Session/LoginForm';
 
   const router = createBrowserRouter([
 	{
-		path: "/",
-		element: <Home />,
+		path: "loginform",
+		element: <LoginForm />,
 	},
+
 	{
-		path: "login",
-		element: (
-			<>
-				<h1>Please log in</h1>
-				<p>This is where you authenticate and get a session or jwt.</p>
-			</>
-		),
-	},
-	{
-		element: <ProtectedRoutes />,
+		element: <ProtectedRoute />,
 		children: [
 			{
-				path: "admin",
-				element: (
-					<>
-						<p>This is admin page.</p>
-					</>
-				),
-			},
+        path: "/",
+        element: <App />,
+	    },
 			{
 				path: "user",
 				element: (
