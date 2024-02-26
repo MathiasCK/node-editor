@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-const ProtectedRoutes = () => {
+const ProtectedRoute = () => {
 	const localStorageToken = localStorage.getItem("token");
 
 	// decode the jwt & see if its expired
@@ -12,10 +12,10 @@ const ProtectedRoutes = () => {
 	// if token is expired, remove it
 	if (isExpired) {
 		localStorage.removeItem("token");
-		return <Navigate to="/login" replace />;
+		return <Navigate to="/loginform" replace />;
 	}
 
 	return <Outlet />;
 };
 
-export default ProtectedRoutes;
+export default ProtectedRoute;
