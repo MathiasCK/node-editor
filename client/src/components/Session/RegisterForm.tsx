@@ -1,5 +1,5 @@
 import { useState, SyntheticEvent } from "react";
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate} from 'react-router-dom';
 
 const RegisterForm = () => {
     const [name, setName] = useState('');
