@@ -5,8 +5,21 @@ const RegisterForm = () => {
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [redirect, setRedirect] = useState(false);
+    const [navigate, setNavigate] = useState(false);
 
+    //Stored in Local Storage before backe-end is implemented. 
+    const submit = async (e: SyntheticEvent) => {
+        e.preventDefault();
+
+        console.log({
+            name,
+            username,
+            password
+        })
+        setNavigate(true);
+    };
+
+    /* This is the code for when the back-end/Database will be implemented:
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
@@ -18,14 +31,15 @@ const RegisterForm = () => {
                 username,
                 password
             })
-        });
+        }); 
 
-        setRedirect(true);
-    }
+        setNavigate(true);
+    } */
 
-    if (redirect) {
+    //Navigation when clicking submit back to LoginForm
+    if (navigate) {
         return <Navigate to="/loginform"/>;
-    }
+    } 
 
   return (
     <div className="flex justify-center items-center h-screen bg-indigo-600">
