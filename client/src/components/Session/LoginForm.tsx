@@ -5,7 +5,7 @@ const LoginForm = () => {
     const navigate = useNavigate(); 
 
     const handleSubmit = () => {
-        navigate("/home");
+        navigate("/");
     };
 
   return (
@@ -39,12 +39,12 @@ const LoginForm = () => {
                     </div>
                 </div>
 
-                {/* (Currently not needed yet):
+                
                 <div className="mt-3 flex justify-between items-center">
                     <div>
                         <p>Dont't have an account? <a href='#' className='text-indigo-800 font-semibold'>Register</a></p>
                     </div> 
-                </div> */}
+                </div>
 
             </form>
         </div>

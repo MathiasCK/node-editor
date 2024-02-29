@@ -31,11 +31,16 @@ import { Sidebar, Settings, SelectConnection } from './components/ui';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./components/Session/ProtectedRoute";
 import LoginForm from './components/Session/LoginForm';
+import RegisterForm from './components/Session/RegisterForm';
 
   const router = createBrowserRouter([
 	{
 		path: "loginform",
 		element: <LoginForm />,
+	},
+  {
+		path: "register",
+		element: <RegisterForm />,
 	},
 
 	{
