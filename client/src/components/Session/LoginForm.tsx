@@ -16,7 +16,7 @@ const LoginForm = () => {
                 <div className='mt-3'>
                     <input type='text' id='username' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Username' required />
                 </div>
-                <div>
+                <div className='mt-3'>
                     <input type='password' id='password' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Password' required />
                 </div>
 
@@ -39,10 +39,9 @@ const LoginForm = () => {
                     </div>
                 </div>
 
-                
                 <div className="mt-3 flex justify-between items-center">
                     <div>
-                        <p>Dont't have an account? <a href='#' className='text-indigo-800 font-semibold'>Register</a></p>
+                        <p className="text-black">Dont't have an account? <a href='register' className='text-indigo-800 font-semibold'>Register</a></p>
                     </div> 
                 </div>
 

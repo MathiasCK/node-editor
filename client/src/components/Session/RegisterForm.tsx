@@ -40,20 +40,13 @@ const RegisterForm = () => {
                     <input type='text' id='username' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Username' required
                         onChange={e => setUsername(e.target.value)} />
                 </div>
-                <div>
+                <div className='mt-3'>
                     <input type='password' id='password' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Password' required
                         onChange={e => setPassword(e.target.value)} />
                 </div>
 
                 <div className='mt-5'>
                     <button type='submit' className='border-2 border-indigo-700 bg-indigo-700 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-indigo-700 font-semibold"><i class="fa-solid fa-right-to-bracket'>Submit</button>
-                </div>
-
-                <div className="mt-3 flex justify-between items-center">
-                    <div><Link to="register" className='text-indigo-800 font-semibold'>
-                        Dont't have an account? Register
-                        </Link>
-                    </div> 
                 </div>
             </form>
         </div>
