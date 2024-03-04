@@ -1,12 +1,18 @@
 import { Navigate } from "react-router-dom";
 import { useState, SyntheticEvent } from "react";
 
+const adminUser = {
+        name: 'admin',
+        username: 'admin',
+        password: 'password',
+    };
+
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [navigate, setNavigate] = useState(false);
 
-    //Dette er for når back-end er på plass. 
+    //Dette er for når back-end er på plass.
     const handleSubmit = async (e: SyntheticEvent) => {
         e.preventDefault();
         
