@@ -9,7 +9,7 @@
     "client:dev": "cd client && npm run dev",
     "client:serve": "cd client && npm run serve",
     "client:build": "cd client && npm run build",
-    "server:dev": "cd server && dotnet run",
+    "server:dev": "cd server && dotnet watch run",
     "server": "cd server && dotnet publish -c Release && cd bin/Release/net7.0/publish && dotnet server.dll",
     "server:build": "cd server && dotnet build",
     "server:init": "cd server && dotnet restore",
