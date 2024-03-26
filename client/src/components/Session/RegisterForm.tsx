@@ -1,6 +1,23 @@
 import { useState, SyntheticEvent } from "react";
 import { Navigate} from 'react-router-dom';
+import Axios from 'axios';
 
+
+const RegisterForm = () => {
+const [usernameReg, setUsernameReg] = useState('');
+const [passwordReg, setPasswordReg] = useState('');
+const [navigate, setNavigate] = useState(false);
+
+const register = () => {
+    Axios.post("http://localhost3001/register", {
+        username: usernameReg, 
+        password: passwordReg,
+    }).then((response) => {
+        console.log(response);
+        setNavigate(true);
+    });
+};
+/*
 const RegisterForm = () => {
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
@@ -17,13 +34,13 @@ const RegisterForm = () => {
             password
         })
         setNavigate(true);
-    };
+    }; 
 
-    /* This is the code for when the back-end/Database will be implemented:
+    // This is the code for when the back-end/Database will be implemented:
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await fetch('http://localhost:8000/api/register', {
+        await fetch('http://localhost:8000/register', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -44,23 +61,23 @@ const RegisterForm = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-indigo-600">
         <div className='w-96 p-6 shadow-lg bg-white rounded-md'>
-            <form onSubmit={submit}>
+            <form /*onSubmit={submit}*/>
                 <h1 className='text-3xl block text-center text-black font-bold'><i className='fa-solid fa-user'></i>Register</h1>
                 <div className="mt-3">
                     <input type='text' id='name' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Name' required
-                        onChange={e => setName(e.target.value)} />
+                        /*onChange={e => setName(e.target.value)}*/ />
                 </div>
                 <div className='mt-3'>
                     <input type='text' id='username' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Username' required
-                        onChange={e => setUsername(e.target.value)} />
+                        onChange={e => setUsernameReg(e.target.value)} />
                 </div>
                 <div className='mt-3'>
                     <input type='password' id='password' className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black' placeholder='Password' required
-                        onChange={e => setPassword(e.target.value)} />
+                        onChange={e => setPasswordReg(e.target.value)} />
                 </div>
 
                 <div className='mt-5'>
-                    <button type='submit' className='border-2 border-indigo-700 bg-indigo-700 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-indigo-700 font-semibold"><i class="fa-solid fa-right-to-bracket'>Submit</button>
+                    <button onClick={register} type='submit' className='border-2 border-indigo-700 bg-indigo-700 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-indigo-700 font-semibold"><i class="fa-solid fa-right-to-bracket'>Submit</button>
                 </div>
             </form>
         </div>
